@@ -1,0 +1,2 @@
+[functions.text-to-speech]
+verify_jwt = true

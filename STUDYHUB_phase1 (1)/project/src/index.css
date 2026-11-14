@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-slate-50 text-navy-900 antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+  .dark body {
+    @apply bg-navy-950 text-slate-100;
+  }
+  * {
+    @apply border-navy-200/60;
+  }
+  .dark * {
+    @apply border-navy-800/60;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl bg-white shadow-card transition-all duration-200 dark:bg-navy-900;
+  }
+  .card-hover {
+    @apply hover:shadow-card-hover hover:-translate-y-0.5;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:focus-visible:ring-offset-navy-950;
+  }
+  .btn-primary {
+    @apply btn bg-navy-700 text-white hover:bg-navy-600 active:bg-navy-800 dark:bg-accent-600 dark:hover:bg-accent-500;
+  }
+  .btn-secondary {
+    @apply btn bg-navy-100 text-navy-700 hover:bg-navy-200 dark:bg-navy-800 dark:text-navy-100 dark:hover:bg-navy-700;
+  }
+  .btn-ghost {
+    @apply btn text-navy-600 hover:bg-navy-100 dark:text-navy-300 dark:hover:bg-navy-800;
+  }
+  .btn-danger {
+    @apply btn bg-error-500 text-white hover:bg-error-600;
+  }
+  .input {
+    @apply w-full rounded-xl border border-navy-200 bg-white px-4 py-2.5 text-sm text-navy-900 placeholder-navy-400 transition-colors focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-200 dark:border-navy-700 dark:bg-navy-900 dark:text-navy-100 dark:placeholder-navy-500 dark:focus:border-accent-500 dark:focus:ring-accent-900;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-navy-700 dark:text-navy-200;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+  .nav-link {
+    @apply flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-navy-600 transition-colors hover:bg-navy-100 hover:text-navy-900 dark:text-navy-300 dark:hover:bg-navy-800 dark:hover:text-white;
+  }
+  .nav-link-active {
+    @apply bg-navy-700 text-white hover:bg-navy-700 hover:text-white dark:bg-accent-600 dark:hover:bg-accent-500;
+  }
+  .section-title {
+    @apply text-lg font-semibold text-navy-900 dark:text-white;
+  }
+  .prose-study {
+    @apply leading-relaxed text-navy-700 dark:text-navy-200;
+  }
+  .prose-study h2 {
+    @apply mt-6 mb-3 text-xl font-serif font-semibold text-navy-900 dark:text-white;
+  }
+  .prose-study h3 {
+    @apply mt-5 mb-2 text-base font-semibold text-navy-800 dark:text-navy-100;
+  }
+  .prose-study p {
+    @apply mb-4 text-[15px] leading-7;
+  }
+  .prose-study ul {
+    @apply mb-4 ml-5 list-disc space-y-1.5;
+  }
+  .prose-study ol {
+    @apply mb-4 ml-5 list-decimal space-y-1.5;
+  }
+  .prose-study li {
+    @apply text-[15px] leading-7;
+  }
+  .prose-study strong {
+    @apply font-semibold text-navy-900 dark:text-white;
+  }
+  .prose-study blockquote {
+    @apply my-4 border-l-4 border-accent-400 bg-accent-50 py-2 pl-4 pr-3 text-sm italic text-navy-700 dark:border-accent-600 dark:bg-accent-900/30 dark:text-navy-200;
+  }
+  .prose-study code {
+    @apply rounded bg-navy-100 px-1.5 py-0.5 font-mono text-sm text-navy-800 dark:bg-navy-800 dark:text-navy-100;
+  }
+  .prose-study table {
+    @apply my-4 w-full border-collapse text-sm;
+  }
+  .prose-study th {
+    @apply border border-navy-200 bg-navy-50 px-3 py-2 text-left font-semibold text-navy-800 dark:border-navy-700 dark:bg-navy-800 dark:text-navy-100;
+  }
+  .prose-study td {
+    @apply border border-navy-200 px-3 py-2 dark:border-navy-700;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-navy-300 dark:bg-navy-700;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .transform-gpu {
+    transform: translateZ(0);
+  }
+}
+
+/* React markdown / rendered content spacing */
+.study-content > *:first-child {
+  margin-top: 0;
+}
+.study-content > *:last-child {
+  margin-bottom: 0;
+}
+
+
+/* STUDYHUB Phase 1 responsive polish */
+html, body, #root { min-height: 100%; }
+button, input { font: inherit; }
+button { -webkit-tap-highlight-color: transparent; }
